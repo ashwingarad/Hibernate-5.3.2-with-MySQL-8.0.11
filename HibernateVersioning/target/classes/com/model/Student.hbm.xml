@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.model.Student" table="student"
+		catalog="hibernate">
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
+		<version name="version" column="ver" type="integer"/>		
+		<property name="name"/>
+		<property name="marks"/>
+	</class>
+</hibernate-mapping>
