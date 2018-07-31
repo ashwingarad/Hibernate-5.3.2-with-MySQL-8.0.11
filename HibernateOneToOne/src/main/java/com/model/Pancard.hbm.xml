@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.model.Pancard" table="pancard"
+		catalog="hibernate">
+		<id name="emp_id" type="java.lang.Long">
+			<column name="emp_id" />
+			<generator class="foreign">
+				<param name="property">employee</param>
+			</generator>
+		</id>
+
+		<property name="num" type="string" />
+
+		<one-to-one class="com.model.Employee" constrained="true"
+			name="employee" />
+	</class>
+</hibernate-mapping>
