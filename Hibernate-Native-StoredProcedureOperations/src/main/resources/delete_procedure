@@ -1,0 +1,9 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `student_delete` $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `student_delete`(sid bigint)
+BEGIN
+  Delete from Student where id=sid;
+END $$
+
+DELIMITER ;

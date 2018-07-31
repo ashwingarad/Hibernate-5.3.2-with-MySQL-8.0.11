@@ -1,0 +1,11 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS `hibernate`.`student_update_function` $$
+CREATE FUNCTION `hibernate`.`student_update_function` (sid bigint, sname varchar(45), smark int) RETURNS bool
+DETERMINISTIC
+BEGIN
+    UPDATE student SET name=sname, marks=smark WHERE id=sid;
+    return true;
+END $$
+
+DELIMITER ;

@@ -1,0 +1,11 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS `student_delete_function` $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `student_delete_function`(sid bigint) RETURNS tinyint(1)
+    DETERMINISTIC
+BEGIN
+    DELETE FROM student WHERE id=sid;
+    return true;
+END $$
+
+DELIMITER ;

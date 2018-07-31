@@ -1,0 +1,10 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `student_insert` $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `student_insert`(sname varchar(45), smark integer)
+BEGIN
+  insert into Student(id, name, marks)
+  values(null, sname, smark);
+END $$
+
+DELIMITER ;

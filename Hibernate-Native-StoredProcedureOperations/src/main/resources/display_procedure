@@ -1,0 +1,9 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `student_displayAll` $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `student_displayAll`()
+BEGIN
+  Select * from Student;
+END $$
+
+DELIMITER ;

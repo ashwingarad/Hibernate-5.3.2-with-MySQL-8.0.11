@@ -1,0 +1,9 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `student_displayById` $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `student_displayById`(sid bigint)
+BEGIN
+  Select * from Student where id=sid;
+END $$
+
+DELIMITER ;

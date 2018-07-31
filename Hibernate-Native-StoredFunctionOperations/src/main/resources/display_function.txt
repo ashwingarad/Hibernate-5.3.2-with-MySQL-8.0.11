@@ -1,0 +1,12 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS `student_display_function` $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `student_display_function`(sid bigint) RETURNS varchar(45) CHARSET utf8
+    DETERMINISTIC
+BEGIN
+  DECLARE sname varchar(45);
+    Select name into sname from Student where id=sid;
+  return sname;
+END $$
+
+DELIMITER ;

@@ -1,0 +1,11 @@
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS `student_insert_function` $$
+CREATE DEFINER=`root`@`localhost` FUNCTION `student_insert_function`(sname varchar(45), smark int) RETURNS tinyint(1)
+    DETERMINISTIC
+BEGIN
+    insert into student(id, name, marks)values (null,sname, smark);
+    return true;
+END $$
+
+DELIMITER ;

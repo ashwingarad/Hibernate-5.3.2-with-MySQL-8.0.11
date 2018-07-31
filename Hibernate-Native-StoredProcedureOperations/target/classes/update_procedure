@@ -1,0 +1,10 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `student_update` $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `student_update`(sid bigint, sname varchar(45), smark integer)
+BEGIN
+  Update Student set name=sname, marks=smark
+  where id=sid;
+END $$
+
+DELIMITER ;
