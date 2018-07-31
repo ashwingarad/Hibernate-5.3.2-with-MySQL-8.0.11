@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.model.Employee" table="employee"
+		catalog="hibernate">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" />
+		<property name="salary" />
+
+		<!-- Need not to create Pancard table in DB -->
+
+		<component name="pancard" class="com.model.Pancard">
+			<property name="pan_num" />
+		</component>
+	</class>
+</hibernate-mapping>
