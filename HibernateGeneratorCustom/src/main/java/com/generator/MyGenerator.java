@@ -24,7 +24,7 @@ public class MyGenerator implements IdentifierGenerator {
 			resultSet = statement.executeQuery("select licence_no from licence");
 
 			String id = null;
-			if (resultSet != null) {
+			if (resultSet.isBeforeFirst()) {
 				while (resultSet.next()) {
 					if (resultSet.isLast()) {
 						id = resultSet.getString("licence_no");
