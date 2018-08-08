@@ -8,9 +8,17 @@
 	<class name="com.model.Student" table="student"
 		catalog="hibernate">
 		<id name="id">
-			<generator class="sequence">
+			<!-- <generator class="sequence">
 				<param name="sequence">test_sequence</param>
 					<!-- Won't work on MySQL 5.7 with hibernate 5 configuration -->
+			</generator> 
+		 	-->
+			
+			<generator
+				class="org.hibernate.id.enhanced.SequenceStyleGenerator">
+				<param name="sequence_name">HILO_SEQUENCE</param>
+				<param name="optimizer" >hilo</param>
+				<param name="increment_size">1</param>
 			</generator>
 		</id>
 
