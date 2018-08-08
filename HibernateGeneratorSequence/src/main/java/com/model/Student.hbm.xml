@@ -9,10 +9,9 @@
 		catalog="hibernate">
 		<id name="id">
 			<!-- <generator class="sequence">
-				<param name="sequence">test_sequence</param>
-					<!-- Won't work on MySQL 5.7 with hibernate 5 configuration -->
+				<param name="sequence">test_sequence</param>					
 			</generator> 
-		 	-->
+		 	-->	<!-- Won't work on MySQL 5.7 with hibernate 5 configuration -->
 			
 			<generator
 				class="org.hibernate.id.enhanced.SequenceStyleGenerator">
